@@ -2,13 +2,13 @@
 #include<conio.h>
 void main()
 {
-  int a[10],i,j,k,small,pos,n;
+  int a[10],i,j,k,small,pos,n,temp;
   printf("enter a number:");
   scanf("%d",&n);
   for(i=0;n>0;i++)
   {
     a[i]=n%10;
-    n=n\10;
+    n=n/10;
   }
   for(j=0;j>i-1;j++)
   {
