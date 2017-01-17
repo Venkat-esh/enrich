@@ -16,10 +16,11 @@ main()
             }
             else
             {
-               a[i][j]=a[i-1][j-1]+a[i-1][j]);
+               a[i][j]=a[i-1][j-1]+a[i-1][j];
             }
-            printf("\t%d",a[i][j]);
+            printf("%d",a[i][j]);
         }
          printf("\n");
     }
 }
+
