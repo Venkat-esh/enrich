@@ -1,7 +1,7 @@
 #include<stdio.h>
 main()
 {
-    int a[100],n,i,k,pos=0;
+    int a[100],n,i,k;
     printf("Enter the number of terms in array");
     scanf("%d",&n);
     printf("\n");
@@ -16,8 +16,7 @@ main()
     {
         if(a[i]==k)
         {
-            pos=i;
-            printf("the position is %d",pos);
+            printf("the position is %d",i);
         }
     }
 }
