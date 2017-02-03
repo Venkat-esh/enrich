@@ -1,3 +1,4 @@
+/* Sorting in ascending order*/
 #include<stdio.h>
 main()
 {
