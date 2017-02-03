@@ -17,7 +17,7 @@ main()
         if(a[i]==k)
         {
             pos++;
-            continue;
+            break;
         }
     }
     if(pos==0)
