@@ -16,5 +16,6 @@ main()
 int si(int principle,int time,int rate)
 {
 	int si=0;
-	si=(principle*time*rate)/100;
+	si=(principle*time*rate)/1200;
+	return si;
 }
