@@ -2,8 +2,7 @@
 main()
 {
 	int a[10][10],i,j,k=1,n;
-	clrscr();
-	printf("enter the number of rows");
+	printf("enter the number of rows\n");
 	scanf("%d",&n);
 	for(i=0;i<n;i++)
 	{
