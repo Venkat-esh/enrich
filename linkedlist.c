@@ -1,72 +1,62 @@
-#include<stdlib.h>
 #include<stdio.h>
+#include<stdlib.h>
 struct node
 {
 	int element;
 	struct node*next;
-}
-*first=NULL,*last=NULL;
-void insert(int num)
+}*list=NULL,*ptr;
+void create(int num)
 {
 	struct node*newnode;
 	newnode=malloc(sizeof(struct node));
+	ptr=list;
+	while(ptr->next!=NULL)
+	{
+		ptr=ptr->next;
+	}
+	ptr->next=newnode;
 	newnode->element=num;
-	if(first==NULL)
+	newnode->next=NULL;
+}
+int find(x,k)
+{
+	int l=1;
+	ptr=list->next;
+	while(ptr!=NULL&&ptr->element!=x)
 	{
-		first=last=newnode;
-		newnode->next=NULL;
+		ptr=ptr->next;
+		l++;
+	}
+	if(l>k)
+	{
+		return -1;
 	}
 	else
 	{
-		last->next=newnode;
-		newnode->next=NULL;
-		last=newnode;
+		return l;
 	}
 }
-int find(int x)
-{   int count=1,k=0;
-	struct node*newnode;
-	for(newnode=first;newnode!=last;newnode=newnode->next)
-    {
-        if(newnode->element==x)
-	    {   
-	        k=count;
-	        break;
-	    }
-	    else
-	    {
-	        count++;
-	    }
-	}
-	if(k<=count)
-	{
-	    return count;
-	}
-	else
-	{
-	    return 0;
-	}
-}
-void main()
+main()
 {
 	int i,num,x,k,pos;
-	printf("enter the num of the elements");
+	printf("enter the number of elements\n");
 	scanf("%d",&k);
+	printf("enter the elements\n");
 	for(i=0;i<k;i++)
 	{
 		scanf("%d",&num);
-		insert(num);
+		create(num);
 	}
-	printf("enter the element to be searched");
+	printf("enter the element that has to be searched\n");
 	scanf("%d",&x);
-	pos=find(x);
-	if(k<=pos)
+	pos=find(x,k);
+	if(pos==-1)
 	{
-	printf("%d",pos);
+		printf("element not found");
 	}
 	else
 	{
-	printf("element not found");
+		printf("found at position %d",pos);
 	}
 }
 
